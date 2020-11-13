@@ -18,15 +18,6 @@ function setup() {
 	engine = Engine.create();
 	world = engine.world;
 
-	let canvasmouse = Mouse.create(canvas.elt);
-	canvasmouse.pixelRatio = pixelDensity();
-	let options={
-		mouse:canvasmouse
-	}
-
-	mConstraint = MouseConstraint.create(engine, options);
-	World.add(world, mConstraint);
-
 	//Create the Bodies Here.
 	pend1 = new Pendulem(50,300,"black");
 	pend2 = new Pendulem(210,300,"black");
@@ -66,4 +57,5 @@ function draw() {
 function mouseDragged(){
 	Matter.Body.setPosition(pend1.body,{x:mouseX,y:mouseY});
 }
+
 
